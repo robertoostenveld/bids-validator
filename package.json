@@ -10,6 +10,7 @@
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js ./**/*.js",
     "test": "./node_modules/.bin/mocha tests/",
+    "build": "./node_modules/.bin/nexe",
     "npmPublish": "publish"
   },
   "bin": {
@@ -19,6 +20,14 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/INCF/bids-validator/issues"
+  },
+  "nexe": {
+    "input": "./bin/bids-validator",
+    "output": "validator^$",
+    "runtime": {
+      "framework": "node",
+      "version": "4.4.1"
+    }
   },
   "homepage": "https://github.com/INCF/bids-validator",
   "dependencies": {
@@ -37,6 +46,7 @@
     "chai": "",
     "eslint": "^2.7.0",
     "mocha": "^2.2.5",
+    "nexe": "1.1.2",
     "publish": "^0.5.0",
     "sync-request": "2.2.0"
   }
