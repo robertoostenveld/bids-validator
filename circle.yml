@@ -8,6 +8,9 @@ test:
     - npm run lint
     # Run unit tests
     - npm run test
+    # Test build
+    - npm run build
+    - ./bids-validator -h
     # Test gh-pages build
     - rm -rf node_modules/
     - git checkout gh-pages
