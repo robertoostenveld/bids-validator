@@ -11,6 +11,7 @@ test:
     # Test build
     - npm run build
     - ./bids-validator -h
+    - ./bids-validator ./tests/data/BIDS-examples-1.0.0-rc3u5/ds001 --ignoreNiftiHeaders
     # Test gh-pages build
     - rm -rf node_modules/
     - git checkout gh-pages
