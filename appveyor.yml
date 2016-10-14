@@ -1,4 +1,4 @@
-# Test against this version of Node.js
+# Test against this version of Node.js.
 environment:
   nodejs_version: "4.4.1"
 
@@ -16,10 +16,14 @@ test_script:
   - npm --version
   # run tests
   - npm test
-  - npm run lint
+  #- npm run lint
+  # build executable and test
   - npm run build
-  - ./bids-validator -h
-  - ./bids-validator ./tests/data/BIDS-examples-1.0.0-rc3u5/ds001 --ignoreNiftiHeaders
+  - .\bids-validator.exe -h
+  - bids-validator.exe ./tests/data/BIDS-examples-1.0.0-rc3u5/ds001 --ignoreNiftiHeaders
+
+artifacts:
+  - path: bids-validator.exe
 
 # Don't actually build.
 build: off
