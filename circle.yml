@@ -4,15 +4,17 @@ machine:
 
 test:
   override:
+    - go get github.com/aktau/github-release
+    - github-release --help
     # Lint
     - npm run lint
     # Run unit tests
     - npm run test
     # Test build
-    # - npm run build
-    # - ./bids-validator -h
-    # - ./bids-validator ./tests/data/BIDS-examples-1.0.0-rc3u5/ds001 --ignoreNiftiHeaders
-    # - cp ./bids-validator ${CIRCLE_ARTIFACTS}/bids-validator
+    - npm run build
+    - ./bids-validator -h
+    - ./bids-validator ./tests/data/BIDS-examples-1.0.0-rc3u5/ds001 --ignoreNiftiHeaders
+    - cp ./bids-validator ${CIRCLE_ARTIFACTS}/bids-validator
     # Test gh-pages build
     - rm -rf node_modules/
     - git checkout gh-pages
@@ -40,9 +42,3 @@ deployment:
       - git status
       - git commit dist/ --allow-empty -m "Circle CI - validator demo update"
       - git push origin gh-pages
-  release:
-    branch: executable
-      commands:
-        # Install github-release
-        - go get github.com/aktau/github-release
-        - github-release --help
