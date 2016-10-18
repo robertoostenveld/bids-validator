@@ -4,8 +4,6 @@ machine:
 
 test:
   override:
-    - go get github.com/aktau/github-release
-    - github-release --help
     # Lint
     - npm run lint
     # Run unit tests
@@ -15,8 +13,6 @@ test:
     - ./bids-validator -h
     - ./bids-validator ./tests/data/BIDS-examples-1.0.0-rc3u5/ds001 --ignoreNiftiHeaders
     - cp ./bids-validator ${CIRCLE_ARTIFACTS}/bids-validator
-    - github-release --user constellates --repo bids-validator --tag v0.0.1
-    - github-release upload --user constellates --repo bids-validator --tag v0.0.1 --name "bids-validator" --file ${CIRCLE_ARTIFACTS}/bids-validator
     # Test gh-pages build
     - rm -rf node_modules/
     - git checkout gh-pages
