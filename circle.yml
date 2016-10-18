@@ -42,3 +42,8 @@ deployment:
       - git status
       - git commit dist/ --allow-empty -m "Circle CI - validator demo update"
       - git push origin gh-pages
+  release:
+    branch: executable
+      commands:
+        - github-release --user constellates --repo bids-validator --tag v0.0.1
+        - github-release upload --user constellates --repo bids-validator --tag v0.0.1 --name "bids-validator" --file ${CIRCLE_ARTIFACTS}/bids-validator
