@@ -38,7 +38,7 @@ let Issues = React.createClass({
 		let uploadResetLink = <span className="upload-reset-link" onClick={this._reset}>select your folder again</span>
 		// messages
 		let specLink        = <h5>Click to view details on <a href="http://bids.neuroimaging.io" target="_blank">BIDS specification</a></h5>;
-		let notBIDSMessage  = <h4>This does not appear to be a BIDS dataset. <span onClick={this._reset}>Select a new folder</span> and try again.</h4>;
+		let notBIDSMessage  = <h4>This directory failed an initial Quick Test. This means the basic names and structure of the files and directories do not comply with BIDS specification. <span onClick={this._reset}>Select a new folder</span> and try again.</h4>;
 		let warningsMessage = <h4>We found {warningCount} in your dataset.</h4>;
 		let errorMessage    = <h4>Your dataset is not a valid BIDS dataset.</h4>;
 		let noErrorMessage  = <h4>This is a valid BIDS dataset!</h4>;
