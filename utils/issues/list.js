@@ -331,5 +331,15 @@ module.exports = {
         key: 'SLICETIMING_VALUES_GREATOR_THAN_REPETITION_TIME',
         severity: 'error',
         reason: '"SliceTiming" value/s contains invalid value as it is greator than RepetitionTime.  SliceTiming values should be in seconds not milliseconds (common mistake).'
+    },
+    67: {
+        key: 'CHANNELS_COLUMN_NAME',
+        severity: 'error',
+        reason:   "First column of the channels file must be named 'name'"
+    },
+    68: {
+        key: 'CHANNELS_COLUMN_TYPE',
+        severity: 'error',
+        reason:   "Second column of the events file must be named 'type'"
     }
 };
