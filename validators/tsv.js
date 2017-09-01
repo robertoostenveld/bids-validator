@@ -165,7 +165,7 @@ module.exports = function TSV (file, contents, fileList, callback) {
 
     // channels.tsv
     if (file.name.endsWith('_channels.tsv')) {
-        if (headers[0] !== "name"){
+        if (headers[0] !== "name") {
             issues.push(new Issue({
                 file: file,
                 evidence: headers,
@@ -174,7 +174,7 @@ module.exports = function TSV (file, contents, fileList, callback) {
                 code: 61
             }));
         }
-        if (headers[1] !== "type"){
+        if (headers[1] !== "type") {
             issues.push(new Issue({
                 file: file,
                 evidence: headers,
@@ -183,6 +183,6 @@ module.exports = function TSV (file, contents, fileList, callback) {
                 code: 62
             }));
         }
-
+    }
     callback(issues, participants);
 };
