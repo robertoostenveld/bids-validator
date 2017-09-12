@@ -23,7 +23,7 @@ let App = React.createClass({
 			<div className="alert alert-danger" role="alert">
 				<h4>
 					<strong>Sorry this demo does not support your current browser. </strong>
-					Although the validator itself works in multiple browsers as well as node.js, this demo only works in chrome. At this point chrome is the only browser to support folder selection from a file input. Please try this out in chrome.
+					Although the validator itself works in multiple browsers as well as node.js, this demo only works in Chrome or Firefox. At this point Chrome and Firefox are the only browsers to support folder selection from a file input. Please try this out in Chrome or Firefox.
 				</h4>
 			</div>
 		);
@@ -38,8 +38,8 @@ let App = React.createClass({
 					</div>
 				</nav>
 				<div className="container page-wrapper">
-					{!bowser.chrome && !bowser.chromium ? browserWarning : null}
-					{bowser.chrome || bowser.chromium ? <Validate loading={this.state.status === 'validating'}/> : null}
+					{!bowser.chrome && !bowser.chromium && !bowser.firefox ? browserWarning : null}
+					{bowser.chrome || bowser.chromium || bowser.firefox ? <Validate loading={this.state.status === 'validating'}/> : null}
 					{this.state.status === 'validated' ? <Issues /> : null}
 				</div>
 			</div>
