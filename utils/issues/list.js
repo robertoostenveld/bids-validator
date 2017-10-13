@@ -340,6 +340,6 @@ module.exports = {
     68: {
         key: 'CHANNELS_COLUMN_TYPE',
         severity: 'error',
-        reason:   "Second column of the events file must be named 'type'"
+        reason:   "Second column of the channels file must be named 'type'"
     }
 };
