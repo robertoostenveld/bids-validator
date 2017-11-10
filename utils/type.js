@@ -168,7 +168,7 @@ module.exports = {
             '\\/(?:(ses-[a-zA-Z0-9]+)' +
             '\\/)?meg' +
             '\\/\\1(_\\2)?(?:_task-[a-zA-Z0-9]+)?(?:_acq-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?(?:_proc-[a-zA-Z0-9]+)?(?:_part-[0-9]+)?' +
-            '(_meg.(ctf|fif|4d|kit|kdf|itab)|(_meg.ds\\/.*)|(_events.tsv|_channels.tsv|_meg.json|_fid.json|_photo.jpg|_headshape.pos))$');
+            '(_meg.(ctf|fif|4d|kit|kdf|itab)|(_meg.ds\\/.*)|(_events.tsv|_channels.tsv|_meg.json|_fid.json|_fidphoto.jpg|_headshape.pos|.shape|.shape_info))$');
         return conditionalMatch(MegRe, path);
     },
 
@@ -239,6 +239,3 @@ function conditionalMatch (expression, path) {
         }
         return false;
 }
-
-
-
