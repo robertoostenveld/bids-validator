@@ -171,7 +171,7 @@ module.exports = function TSV (file, contents, fileList, callback) {
                 evidence: headers,
                 line: 1,
                 character: rows[0].indexOf(headers[0]),
-                code: 66
+                code: 67
             }));
         }
         if (headers[1] !== "type") {
@@ -180,7 +180,7 @@ module.exports = function TSV (file, contents, fileList, callback) {
                 evidence: headers,
                 line: 1,
                 character: rows[0].indexOf(headers[1]),
-                code: 67
+                code: 68
             }));
         }
     }
