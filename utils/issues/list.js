@@ -353,43 +353,14 @@ module.exports = {
         reason: "All TSV files must use Line Feed '\\n' characters to denote new lines. This files uses Carriage Return '\\r'."
     },
     71: {
-        key: 'CHANNELS_COLUMN_NAME',
+        key: 'MISSING_TSV_COLUMN',
         severity: 'error',
-        reason:   "First column of the channels file must be named 'name'"
-    },
-    72: {
-        key: 'CHANNELS_COLUMN_TYPE',
-        severity: 'error',
-        reason:   "Second column of the channels file must be named 'type'"
-    },
-    73: {
-        key: 'CHANNELS_COLUMN_UNITS',
-        severity: 'error',
-        reason:   "Third column of the channels file must be named 'units'"
+        reason:   "The column names of the channels file must begin with ['name', 'type', 'units', 'sampling_frequency', 'low_cutoff', 'high_cutoff', 'notch']"
     },
     74: {
         key: 'DUPLICATE_NIFTI_FILES',
         severity: 'error',
         reason:   "Nifti file exist with both '.nii' and '.nii.gz' extensions."
     }
-    75: {
-        key: 'CHANNELS_COLUMN_SFREQ',
-        severity: 'error',
-        reason:   "Fourth column of the channels file must be named 'sampling_frequency'"
-    },
-    76: {
-        key: 'CHANNELS_COLUMN_LOWCUT',
-        severity: 'error',
-        reason:   "Third column of the channels file must be named 'low_cutoff'"
-    },
-    77: {
-        key: 'CHANNELS_COLUMN_HIGHCUT',
-        severity: 'error',
-        reason:   "Third column of the channels file must be named 'high_cutoff'"
-    },
-    78: {
-        key: 'CHANNELS_COLUMN_NOTCH',
-        severity: 'error',
-        reason:   "Third column of the channels file must be named 'notch'"
-    },
+    // NEW ADDITIONS SHOULD START WITH 72
 };

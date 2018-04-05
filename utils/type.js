@@ -113,12 +113,12 @@ module.exports = {
         var megSesRe = new RegExp('^\\/(sub-[a-zA-Z0-9]+)' +
             '\\/(?:(ses-[a-zA-Z0-9]+)' +
             '\\/)?\\1(_\\2)?(?:_task-[a-zA-Z0-9]+)?(?:_acq-[a-zA-Z0-9]+)?(?:_proc-[a-zA-Z0-9]+)?'
-            + '(_events.tsv|_channels.tsv|_meg.json|_coordsystem.json|_photo.jpg|_headshape.pos)$');
+            + '(_events.tsv|_channels.tsv|_meg.json|_coordsystem_meg.json|_photo.jpg|_headshape.pos)$');
 
         var ieegSesRe = new RegExp('^\\/(sub-[a-zA-Z0-9]+)' +
             '\\/(?:(ses-[a-zA-Z0-9]+)' +
             '\\/)?\\1(_\\2)?(?:_task-[a-zA-Z0-9]+)?(?:_acq-[a-zA-Z0-9]+)?(?:_proc-[a-zA-Z0-9]+)?'
-            + '(_events.tsv|_channels.tsv|_meg.json|_coordsystem.json|_photo.jpg|_headshape.pos)$');
+            + '(_events.tsv|_channels.tsv|_ieeg.json|_coordsystem_ieeg.json|_photo.jpg|_headshape.pos)$');
 
         return conditionalMatch(scansRe, path) || conditionalMatch(funcSesRe, path) ||
             conditionalMatch(anatSesRe, path) || conditionalMatch(dwiSesRe, path) ||
@@ -203,7 +203,7 @@ module.exports = {
             '\\/(?:(ses-[a-zA-Z0-9]+)' +
             '\\/)?meg' +
             '\\/\\1(_\\2)?(?:_task-[a-zA-Z0-9]+)?(?:_acq-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?(?:_proc-[a-zA-Z0-9]+)?(?:_part-[0-9]+)?' +
-            '(_meg.(ctf|fif|fif.gz|4d|kit|kdf|itab)|(_meg.ds\\/.*)|(_events.tsv|_channels.tsv|_meg.json|_coordsystem.json|_photo.jpg|_headshape.pos))$');
+            '(_meg.(ctf|fif|fif.gz|4d|kit|kdf|itab)|(_meg.ds\\/.*)|(_events.tsv|_channels.tsv|_meg.json|_coordsystem_meg.json|_photo.jpg|_headshape.pos))$');
         return conditionalMatch(MegRe, path);
     },
 
@@ -212,7 +212,7 @@ module.exports = {
             '\\/(?:(ses-[a-zA-Z0-9]+)' +
             '\\/)?ieeg' +
             '\\/\\1(_\\2)?(?:_task-[a-zA-Z0-9]+)?(?:_acq-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?(?:_proc-[a-zA-Z0-9]+)?(?:_part-[0-9]+)?' +
-            '(_ieeg.(edf|gdf|fif|fif.gz)|(_events.tsv|_channels.tsv|_meg.json|_coordsystem.json|_photo.jpg|_headshape.pos))$');
+            '(_ieeg.(edf|gdf|fif|fif.gz)|(_events.tsv|_channels.tsv|_ieeg.json|_coordsystem_ieeg.json|_photo.jpg|_headshape.pos))$');
         return conditionalMatch(MegRe, path);
     },
 
