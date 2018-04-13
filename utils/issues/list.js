@@ -353,7 +353,12 @@ module.exports = {
         reason: "All TSV files must use Line Feed '\\n' characters to denote new lines. This files uses Carriage Return '\\r'."
     },
     71: {
-        key: 'MISSING_TSV_COLUMN',
+        key: 'MISSING_TSV_COLUMN_MEG',
+        severity: 'error',
+        reason:   "The column names of the channels file must begin with ['name', 'type', 'units']"
+    },
+    72: {
+        key: 'MISSING_TSV_COLUMN_IEEG',
         severity: 'error',
         reason:   "The column names of the channels file must begin with ['name', 'type', 'units', 'sampling_frequency', 'low_cutoff', 'high_cutoff', 'notch']"
     },
@@ -362,5 +367,5 @@ module.exports = {
         severity: 'error',
         reason:   "Nifti file exist with both '.nii' and '.nii.gz' extensions."
     }
-    // NEW ADDITIONS SHOULD START WITH 72
+    // NEW ADDITIONS SHOULD START WITH 73
 };
