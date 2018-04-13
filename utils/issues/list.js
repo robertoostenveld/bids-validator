@@ -358,14 +358,18 @@ module.exports = {
         reason:   "The column names of the channels file must begin with ['name', 'type', 'units']"
     },
     72: {
-        key: 'MISSING_TSV_COLUMN_IEEG',
+        key: 'MISSING_TSV_COLUMN_IEEG_CHANNELS',
         severity: 'error',
         reason:   "The column names of the channels file must begin with ['name', 'type', 'units', 'sampling_frequency', 'low_cutoff', 'high_cutoff', 'notch']"
+    },
+    73: {
+        key: 'MISSING_TSV_COLUMN_IEEG_ELECTRODES',
+        severity: 'error',
+        reason:   "The column names of the electrodes file must begin with ['name', 'x', 'y', 'z', 'size', 'type']"
     },
     74: {
         key: 'DUPLICATE_NIFTI_FILES',
         severity: 'error',
         reason:   "Nifti file exist with both '.nii' and '.nii.gz' extensions."
     }
-    // NEW ADDITIONS SHOULD START WITH 73
 };
