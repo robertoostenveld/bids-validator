@@ -6,7 +6,7 @@
  * BIDS specification requirements.
  */
 var anatSuffixes = ["T1w", "T2w", "T1map", "T2map", "T1rho", "FLAIR", "PD", "PDT2", "inplaneT1", "inplaneT2","angio",
-    "defacemask", "SWImagandphase", "T2star", "FLASH", "PDmap"];
+    "defacemask", "SWImagandphase", "T2star", "FLASH", "PDmap", "photo"];
 
 module.exports = {
 
@@ -55,7 +55,7 @@ module.exports = {
         var megTopRe = new RegExp('^\\/(?:ses-[a-zA-Z0-9]+_)?task-[a-zA-Z0-9]+(?:_acq-[a-zA-Z0-9]+)?(?:_proc-[a-zA-Z0-9]+)?'
             + '(_meg.json|_channels.tsv|_photo.jpg|_coordsystem.json)$');
 
-        var ieegTopRe = new RegExp('^\\/(?:ses-[a-zA-Z0-9]+_)?task-[a-zA-Z0-9]+(?:_acq-[a-zA-Z0-9]+)?(?:_proc-[a-zA-Z0-9]+)?'
+        var ieegTopRe = new RegExp('^\\/(?:ses-[a-zA-Z0-9]+_)?task-[a-zA-Z0-9]+(?:_acq-[a-zA-Z0-9]+)?(?:_proc-[a-zA-Z0-9]+)?(?:_space-[a-zA-Z0-9]+)?'
             + '(_ieeg.json|_channels.tsv|_electrodes.tsv|_photo.jpg|_coordsystem.json)$');
 
         var otherTopFiles = new RegExp('^\\/(?:ses-[a-zA-Z0-9]+_)?(?:recording-[a-zA-Z0-9]+_)?(?:task-[a-zA-Z0-9]+_)?(?:acq-[a-zA-Z0-9]+_)?(?:rec-[a-zA-Z0-9]+_)?(?:run-[0-9]+_)?'
@@ -143,7 +143,7 @@ module.exports = {
             '\\/)?anat' +
             '\\/\\1(_\\2)?(?:_acq-[a-zA-Z0-9]+)?(?:_rec-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?_(?:'
             + anatSuffixes.join("|")
-            + ').(nii.gz|nii|json)$');
+            + ').(nii.gz|nii|json|jpg)$');
         return conditionalMatch(anatRe, path);
     },
 
