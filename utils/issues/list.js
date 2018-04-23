@@ -280,7 +280,7 @@ module.exports = {
     55: {
         key: 'JSON_SCHEMA_VALIDATION_ERROR',
         severity: 'error',
-        reason: 'JSON file is not formatted according the schema.'
+        reason: 'Invalid JSON file. The file is not formatted according the schema.'
     },
     56: {
         key: 'Participants age 89 or higher',
@@ -371,5 +371,10 @@ module.exports = {
         key: 'DUPLICATE_NIFTI_FILES',
         severity: 'error',
         reason:   "Nifti file exist with both '.nii' and '.nii.gz' extensions."
+    },
+    75: {
+        key: 'NIFTI_PIXDIM4',
+        severity: 'error',
+        reason: "Nifti file's header is missing time dimension information."
     }
 };
