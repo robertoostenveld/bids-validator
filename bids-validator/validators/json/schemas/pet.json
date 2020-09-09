@@ -142,10 +142,14 @@
           }
         }
       },
-      "then": {
-      },
+      "then": {},
       "else": {
-        "required": ["InjectedMass", "InjectedMassUnit", "SpecificRadioactivity", "SpecificRadioactivityUnit"]
+        "required": [
+          "InjectedMass",
+          "InjectedMassUnit",
+          "SpecificRadioactivity",
+          "SpecificRadioactivityUnit"
+        ]
       }
     }
   ],
@@ -174,7 +178,12 @@
     "ReconMethodParameterValues",
     "ReconFilterType",
     "ReconFilterSize",
-    "AttenuationCorrection"
+    "AttenuationCorrection",
+
+    "MetaboliteAvail",
+    "PlasmaAvail",
+    "ContinuousBloodAvail",
+    "DiscreteBloodAvail"
   ],
   "dependencies": {
     "TracerMolecularWeight": ["TracerMolecularWeightUnit"],

@@ -79,6 +79,10 @@ const selectSchema = file => {
   if (file.name) {
     if (file.name.endsWith('participants.json')) {
       schema = require('./schemas/data_dictionary.json')
+    } else if (file.name.endsWith('events.json')) {
+      schema = require('./schemas/events.json')
+    } else if (file.name.endsWith('channels.json')) {
+      schema = require('./schemas/channels.json')
     } else if (
       file.name.endsWith('bold.json') ||
       file.name.endsWith('sbref.json')
@@ -109,13 +113,12 @@ const selectSchema = file => {
       schema = require('./schemas/coordsystem_eeg.json')
     } else if (file.name.endsWith('pet.json')) {
       schema = require('./schemas/pet.json')
+    } else if (
+      file.relativePath.includes('/pet/') &&
+      file.name.endsWith('blood.json')
+    ) {
+      schema = require('./schemas/blood.json')
     }
-     else if (
-       file.relativePath.includes('/pet/') &&
-       file.name.endsWith('blood.json')
-     ) {
-       schema = require('./schemas/blood_pet.json')
-     }
   }
   return schema
 }
