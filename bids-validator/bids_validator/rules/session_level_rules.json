@@ -88,5 +88,12 @@
         "_photo.jpg"
       ]
     }
+  },
+
+  "pet_ses": {
+    "regexp": "^\\/(sub-[a-zA-Z0-9]+)\\/(?:(ses-[a-zA-Z0-9]+)\\/)?\\1(_\\2)?(?:_task-[a-zA-Z0-9]+)?(?:_acq-[a-zA-Z0-9]+)?(?:_proc-[a-zA-Z0-9]+)?(?:_space-[a-zA-Z0-9]+)?(@@@_pet_ses_type_@@@)$",
+    "tokens": {
+      "@@@_pet_ses_type_@@@": ["_events.tsv", "_blood.tsv", "_pet.json"]
+    }
   }
 }
